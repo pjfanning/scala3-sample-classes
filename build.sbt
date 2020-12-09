@@ -4,7 +4,7 @@ name := "scala3-sample-classes"
 
 organization := "com.github.pjfanning"
 
-scalaVersion := "3.0.0-M2"
+scalaVersion := "3.0.0-M1" //downgrade due to https://github.com/scala/bug/issues/12255
 
 organizationHomepage in ThisBuild := Some(url("https://github.com/pjfanning/scala3-sample-classes"))
 
