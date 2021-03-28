@@ -20,8 +20,6 @@ publishArtifact in Test := false
 
 pomIncludeRepository := { x => false }
 
-Global / useGpg := false
-
 publishTo := {
   if (version.value.trim.endsWith("SNAPSHOT"))
     Some("Sonatype Nexus Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots")
