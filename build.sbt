@@ -4,14 +4,14 @@ name := "scala3-sample-classes"
 
 organization := "com.github.pjfanning"
 
-scalaVersion := "3.0.0-RC1"
+scalaVersion := "3.0.0-RC2"
 
 organizationHomepage in ThisBuild := Some(url("https://github.com/pjfanning/scala3-sample-classes"))
 
 scalacOptions in ThisBuild ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked")
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.2.6" % Test
+  "org.scalatest" %% "scalatest" % "3.2.7" % Test
 )
 
 publishMavenStyle in ThisBuild := true
