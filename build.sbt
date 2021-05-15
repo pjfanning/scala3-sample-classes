@@ -14,7 +14,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.9" % Test
 )
 
-ThisBuild / publishMavenStyle := true
+publishMavenStyle := true
 
 Test / publishArtifact := false
 
