@@ -4,19 +4,19 @@ name := "scala3-sample-classes"
 
 organization := "com.github.pjfanning"
 
-scalaVersion := "3.0.0-RC2"
+scalaVersion := "3.0.0"
 
-organizationHomepage in ThisBuild := Some(url("https://github.com/pjfanning/scala3-sample-classes"))
+ThisBuild / organizationHomepage := Some(url("https://github.com/pjfanning/scala3-sample-classes"))
 
-scalacOptions in ThisBuild ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked")
+ThisBuild / scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked")
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.2.7" % Test
+  "org.scalatest" %% "scalatest" % "3.2.9" % Test
 )
 
-publishMavenStyle in ThisBuild := true
+ThisBuild / publishMavenStyle := true
 
-publishArtifact in Test := false
+Test / publishArtifact := false
 
 pomIncludeRepository := { x => false }
 
@@ -27,22 +27,17 @@ publishTo := {
     Some("Sonatype Nexus Releases" at "https://oss.sonatype.org/service/local/staging/deploy/maven2")
 }
 
-credentials in ThisBuild += Credentials (Path.userHome / ".ivy2" / ".credentials")
+ThisBuild / credentials += Credentials (Path.userHome / ".ivy2" / ".credentials")
 
-resolvers in ThisBuild ++= Seq(
+ThisBuild / resolvers ++= Seq(
   Resolver.mavenLocal,
   Resolver.sonatypeRepo("snapshots")
 )
 
-publishMavenStyle := true
-
-publishArtifact in Test := false
-
-pomIncludeRepository := { x => false }
 
 homepage := Some(new URL("https://github.com/pjfanning/scala3-sample-classes"))
 
-parallelExecution in Test := false
+Test / parallelExecution := false
 
 startYear := Some(2020)
 
