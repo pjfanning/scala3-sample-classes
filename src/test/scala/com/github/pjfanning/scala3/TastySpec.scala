@@ -1,9 +1,8 @@
 package com.github.pjfanning.scala3
 
+import com.github.pjfanning.scala3.TastyUtil.hasTastyFile
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.must.Matchers
-
-import scala.annotation.tailrec
 
 class TastySpec extends AnyWordSpec with Matchers {
   private val specClass = classOf[TastySpec]
@@ -35,20 +34,6 @@ class TastySpec extends AnyWordSpec with Matchers {
     }
     "not support Java class" in {
       hasTastyFile(classOf[String]) mustBe false
-    }
-  }
-
-  @tailrec
-  private def hasTastyFile(clz: Class[_]): Boolean = {
-    clz != null && clz.getCanonicalName != null && {
-      val baseName = clz.getCanonicalName.replace(".", "/")
-      val classFileBase = if (baseName.endsWith("$")) {
-        baseName.substring(0, baseName.length - 1)
-      } else {
-        baseName
-      }
-      val tastyFile = s"/$classFileBase.tasty"
-      Option(specClass.getResource(tastyFile)).isDefined || hasTastyFile(clz.getEnclosingClass)
     }
   }
 }
