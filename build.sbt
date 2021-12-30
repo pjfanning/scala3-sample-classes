@@ -4,7 +4,7 @@ name := "scala3-sample-classes"
 
 organization := "com.github.pjfanning"
 
-scalaVersion := "3.0.2"
+ThisBuild / scalaVersion := "3.0.2"
 
 ThisBuild / organizationHomepage := Some(url("https://github.com/pjfanning/scala3-sample-classes"))
 
@@ -43,7 +43,7 @@ startYear := Some(2020)
 
 licenses := Seq(("Apache License 2.0", new URL("http://www.apache.org/licenses/LICENSE-2.0.html")))
 
-releasePublishArtifactsAction := PgpKeys.publishSigned.value
+//releasePublishArtifactsAction := PgpKeys.publishSigned.value
 
 pomExtra := {
   pomExtra.value ++ Group(
@@ -66,3 +66,4 @@ pomExtra := {
   )
 }
 
+ThisBuild / githubWorkflowOSes := Seq("ubuntu-latest", "windows-latest")
